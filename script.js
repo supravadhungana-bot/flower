@@ -1,11 +1,10 @@
-const today = new Date().toISOString().split("T")[0];
-
+const today = new Date().toLocaleDateString("en-CA");
 document.querySelectorAll(".card").forEach(card => {
   const unlockDate = card.dataset.unlock;
   const locked = card.querySelector(".locked");
   const content = card.querySelector(".content");
 
-  if (today < unlockDate) {
+  if (today >= unlockDate) 
  {
     if (locked) locked.style.display = "none";
     if (content) content.classList.remove("hidden");
