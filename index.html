@@ -19,74 +19,146 @@
 
   <!-- CARD 2 : PROPOSE DAY -->
   <section class="card" data-unlock="2026-02-08" style="background-image:url('propose.jpg')">
-    <div class="locked">🔒 Locked — Come back tomorrow</div>
+    
 
-    <div class="content hidden">
+    
       <h1>Will you buy me pink tulips someday? 🌷</h1>
       <div class="buttons">
         <button onclick="answerYes()">Yes</button>
         <button onclick="answerNo()">No</button>
-      </div>
+      
       <p id="answerText"></p>
     </div>
   </section>
 
   <!-- CARD 3 : CHOCOLATE DAY -->
-  <section class="card" data-unlock="2026-02-09" style="background-image:url('chocobg.jpg')">
-    <div class="locked">🔒 Locked</div>
-    <div class="content hidden">
-      <h1>What’s your favorite chocolate? 🍫</h1>
-      <p>I’ll remember.</p>
-    </div>
+  <section class="card" data-unlock="2026-02-09" style="background-image:url('hearts.jpg')">
+      <h1>Happy chocolate dayyy</h1>
+      <p>What’s your favorite chocolate? 🍫</p>
+
+<input 
+  type="text" 
+  placeholder="Type it here 🍫" 
+  class="choco-input"
+/>
+
+    
   </section>
 
   <!-- CARD 4 : TEDDY DAY -->
   <section class="card" data-unlock="2026-02-10" style="background-image:url('teddybgg.jpg')">
-    <div class="locked">🔒 Locked</div>
-    <div class="content hidden">
-      <h1>Here’s a teddy for you 🧸</h1>
+      <h1>Happy teddy dayyy 🤎 </h1>
+      <p>Here’s a teddy for you 🧸</p>
       <p>Pretend this is warm and comforting.</p>
-    </div>
   </section>
 
   <!-- CARD 5 : PROMISE DAY -->
   <section class="card" data-unlock="2026-02-11" style="background-image:url('promise.jpg')">
-    <div class="locked">🔒 Locked</div>
-    <div class="content hidden">
       <h1>Promise Day 🤞</h1>
-      <p>I promise to give you the longest hug when I see you.</p>
-    </div>
+      <p>I promise to give you the longest hug when I see you. </p>
   </section>
 
   <!-- CARD 6 : HUG DAY -->
   <section class="card" data-unlock="2026-02-12" style="background-image:url('hugbg.jpg')">
-    <div class="locked">🔒 Locked</div>
-    <div class="content hidden">
-      <h1>Virtual hugs for you 🤗</h1>
-    </div>
+      
+      <h1>Happy hug dayy ❤️</h1>
+      <h2>Sending you a virtual hug.</h2>
+      <p>I wish I could hug you today 🥲</p>
   </section>
 
   <!-- CARD 7 : KISS DAY -->
   <section class="card" data-unlock="2026-02-13" style="background-image:url('kissesbg.jpg')">
     <div class="locked">🔒 Locked</div>
     <div class="content hidden">
-      <h1>Don’t let the wind steal them before they reach you.</h1>
+    <h1>I'm sending you a flying kiss 💋</h1>
+<p>Click below before the wind takes it away 🌬</p>
+
+<button onclick="alert('You caught it 😌💋')">
+  Catch it
+</button>
+
     </div>
   </section>
 
   <!-- CARD 8 : LETTER DAY -->
-  <section class="card" data-unlock="2026-02-14" style="background-image:url('letterbg.jpg')">
+  <section class="card" data-unlock="2026-02-14" style="background-image:url('propose.jpg')">
     <div class="locked">🔒 Locked</div>
-    <div class="content hidden">
-      <h1>💌</h1>
-      <img src="letter.jpg" class="letter-image">
+    <section id="valentine">
+    <!-- START SCREEN -->
+    <div id="startScreen">
+      <h1>Happy Valentine's Day</h1>
+      <button onclick="startTest()">Click Me</button>
+    </div>
+
+    <!-- QUIZ -->
+    <div id="quiz" style="display:none;">
+
+      <!-- QUESTION 1 -->
+      <div class="question" id="q1">
+        <h2>Do you like pink tulips?</h2>
+        <button onclick="nextQuestion(1)">Yes</button>
+        <button onclick="nextQuestion(1)">I will if you like them</button>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="question" id="q2" style="display:none;">
+        <h2>Would you accept virtual hugs?</h2>
+        <button onclick="nextQuestion(2)">Obviously</button>
+        <button onclick="nextQuestion(2)">Yes</button>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="question" id="q3" style="display:none;">
+        <h2>Are you prepared to catch flying kisses?</h2>
+        <button onclick="nextQuestion(3)">I never miss</button>
+        <button onclick="nextQuestion(3)">I'll try</button>
+      </div>
+
+      <!-- QUESTION 4 -->
+      <div class="question" id="q4" style="display:none;">
+        <h2>Are you willing to be my valentine?</h2>
+        <button onclick="showResult()">Yes</button>
+        <button onclick="showResult()">I thought I already was</button>
+      </div>
+
+      <!-- RESULT -->
+      <div id="result" style="display:none;">
+        <h2>Compatibility Result</h2>
+        <p>100% compatible</p>
+        <p>You're officially stuck with me 😌</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</section>
+
+  
+</script>
+
+      
+        
+
+</script>
+
+  
+  
+
+
+
+</script>
+
+      
     </div>
   </section>
-<div class="swipe-hint">Swipe right →</div>
 
-</div>
+
+
 
 <script src="script.js"></script>
+
+
 </body>
 </html>
 

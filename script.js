@@ -1,36 +1,45 @@
-function getNepalDate() {
-  const now = new Date();
-  const nepalTime = new Date(
-    now.toLocaleString("en-US", { timeZone: "Asia/Kathmandu" })
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Get Nepal time properly
+  const nepalNow = new Date(
+    new Date().toLocaleString("en-US", { timeZone: "Asia/Kathmandu" })
   );
 
-  const year = nepalTime.getFullYear();
-  const month = String(nepalTime.getMonth() + 1).padStart(2, "0");
-  const day = String(nepalTime.getDate()).padStart(2, "0");
+  const todayNepal = new Date(
+    nepalNow.getFullYear(),
+    nepalNow.getMonth(),
+    nepalNow.getDate()
+  );
 
-  return `${year}-${month}-${day}`;
-}
+  const cards = document.querySelectorAll(".card");
 
-const today = getNepalDate();
-const unlockDate = "2026-02-08";
+  cards.forEach(card => {
 
-if (today >= unlockDate) {
-  document.body.classList.add("open");
-} else {
-  document.body.classList.add("locked");
-}
+    const unlockStr = card.getAttribute("data-unlock");
+    const unlockDate = new Date(unlockStr + "T00:00:00");
 
-document.querySelectorAll(".card").forEach(card => {
-  
-  const locked = card.querySelector(".locked");
-  const content = card.querySelector(".content");
+    if (todayNepal < unlockDate) {
 
-  
- {
-    if (locked) locked.style.display = "none";
-    if (content) content.classList.remove("hidden");
-  }
+      card.innerHTML = `
+        <div style="
+          height: 300px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        ">
+          <h2>🔒 Locked</h2>
+          <p>Opens on ${unlockStr}</p>
+        </div>
+      `;
+    }
+
+  });
+
 });
+
+
 
 function answerYes() {
   document.getElementById("answerText").innerText = "Yayyy 💗 That made me smile.";
@@ -39,3 +48,19 @@ function answerYes() {
 function answerNo() {
   document.getElementById("answerText").innerText = "Okay 🙂.";
 }
+
+function startTest() {
+  document.getElementById("startScreen").style.display = "none";
+  document.getElementById("quiz").style.display = "block";
+}
+
+function nextQuestion(current) {
+  document.getElementById("q" + current).style.display = "none";
+  document.getElementById("q" + (current + 1)).style.display = "block";
+}
+
+function showResult() {
+  document.getElementById("q4").style.display = "none";
+  document.getElementById("result").style.display = "block";
+}
+
